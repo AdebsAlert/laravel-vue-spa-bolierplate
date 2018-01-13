@@ -2,7 +2,7 @@
 Starter Boilerplate SPA made with Laravel 5.5, Vue 2, JWT Auth, Vue-router 3, Vuex 3 & Axios
 
  
-## What's included 
+## Built With
 * [Laravel 5.5](https://laravel.com/docs/5.5)
 * [Vue 2](https://vuejs.org)
 * [Vue Router 3](http://router.vuejs.org)

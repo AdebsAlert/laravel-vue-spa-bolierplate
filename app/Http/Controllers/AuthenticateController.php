@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\User;
 
@@ -63,5 +63,17 @@ class AuthenticateController extends Controller
         $user = $request->user();
 
         return response()->json(compact('token', 'user'));
+    }
+
+
+    public function logout(Request $request) {
+        $this->validate($request, ['token' => 'required']);
+        try {
+            JWTAuth::invalidate($request->input('token'));
+            return response()->json(['success' => true, 'message'=> "You have successfully logged out."]);
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()->json(['success' => false, 'error' => 'Failed to logout, please try again.'], 500);
+        }
     }
 }

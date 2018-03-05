@@ -20,9 +20,9 @@
 						<a class="nav-link">Register</a>
 					</router-link>
 
-					<li class="nav-item" v-show="isLoggedIn">
-						<a class="nav-link" href="#" @click.prevent="logout">Logout</a>
-					</li>
+					<router-link v-show="isLoggedIn" :to="{name: 'logout'}" tag="li" class="nav-item" exact>
+						<a class="nav-link">Logout</a>
+					</router-link>
 				</ul>
 			</div>
 		</div>

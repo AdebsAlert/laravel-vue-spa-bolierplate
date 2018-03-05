@@ -14,9 +14,10 @@ Starter Boilerplate SPA made with Laravel 5.5, Vue 2, JWT Auth, Vue-router 3, Vu
 * Clone the repo
 * `cd` to the repo
 * Copy `.env.example` to `.env` by running `cp .env.example .env`
-* Run `php artisan key:generate`
-* Configure `.env`
 * Run `composer install --no-scripts`
+* Run `php artisan key:generate`
+* Run `php artisan jwt:secret`
+* Configure `.env`
 * Run `php artisan migrate`.
 * Run `npm install`
 * Run `npm run watch`

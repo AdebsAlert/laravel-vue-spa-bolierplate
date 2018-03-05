@@ -1,6 +1,8 @@
 import Home from './components/home/Home.vue';
 import Login from './components/auth/Login.vue';
 import Register from './components/auth/Register.vue';
+import Logout from './components/auth/Logout.vue';
+import _404 from './components/shared/404.vue';
 
 export default [
 	{
@@ -21,4 +23,14 @@ export default [
         component: Register,
         meta: {requiresGuest: true}
     },
+	{
+        path: '/logout',
+        name: 'logout',
+        component: Logout,
+        meta: {}
+    },
+	{
+        path: '*',
+        component: _404,
+    }
 ];
